@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   events.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 23:12:19 by ayman_marzo       #+#    #+#             */
-/*   Updated: 2024/01/22 14:17:55 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:58:40 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,16 @@ int	close_handler(t_fractal *fractal)
 	mlx_destroy_window(fractal->connect, fractal->window);
 	free(fractal->connect);
 	exit(0);
+}
+
+void	colour_shift(t_fractal *fract)
+{
+	static int colours[] = {WHITE, PASTELPINK, GREEN, BLUE, MAGENTA, LIME, ORANGE, PURPLE, AQUA, PINK, ELECTRIC, LIGHTENING, LAVA, YELLOW, PASTELYELLOW};
+	static int colour_index = 0;
+
+	colour_index = (colour_index + 1) % (sizeof(colours) / sizeof(colours[0]));
+	fract->current_colour = colours[colour_index];
+	fractal_render(fract);
 }
 
 int	key_handler(int keysym, t_fractal *fractal)
@@ -44,6 +54,8 @@ int	key_handler(int keysym, t_fractal *fractal)
 		fractal->zoom *= 1.05;
 	if (keysym == SPACE)
 		fractal->flag = !fractal->flag;
+	if (keysym == 8)
+		colour_shift(fractal);
 	fractal_render(fractal);
 	return (0);
 }

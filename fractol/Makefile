@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+         #
+#    By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 14:36:55 by amarzouk          #+#    #+#              #
-#    Updated: 2024/01/22 14:41:52 by amarzouk         ###   ########.fr        #
+#    Updated: 2024/02/09 14:04:44 by ayman_marzo      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,17 +17,18 @@ OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = -L minilibx -lmlx -framework OpenGL -framework AppKit
 MINILIBX_DIR = minilibx
+CC = cc
 
-all: minilibx $(NAME)
+all: minilibx $(NAME) clean
 minilibx:
 	@echo "Building minilibx..."
 	@make -C $(MINILIBX_DIR)
 
 $(NAME): $(OBJ)
-	gcc $(CFLAGS) $(OBJ) $(LDFLAGS) -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJ) $(LDFLAGS) -o $(NAME)
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
-	gcc $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	rm -f $(OBJ)

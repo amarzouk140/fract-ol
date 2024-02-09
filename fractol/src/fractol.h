@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ayman_marzouk <ayman_marzouk@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:54:12 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/01/22 14:25:30 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:01:10 by ayman_marzo      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,18 @@
 # define RED 0xFF0000
 # define GREEN 0x00FF00
 # define BLUE 0x0000FF
-
+#define MAGENTA			0xFF00FF 
+#define LIME			0xCCFF00 
+#define ORANGE			0xFF6600
+#define PURPLE			0x9932CC 
+#define AQUA			0x33CCCC
+#define PINK			0xFF66B2
+#define ELECTRIC		0x0066FF
+#define LIGHTENING		0x00CCFF
+#define LAVA			0xFF3300
+#define YELLOW			0xFFFF00 
+#define PASTELYELLOW	0xFFFF99
+#define	PASTELPINK		0xFFB6C1
 # define MAGENTA_BURST 0xFF00FF
 # define LIME_SHOCK 0xCCFF00
 # define NEON_ORANGE 0xFF6600
@@ -41,7 +52,6 @@
 # define HOT_PINK 0xFF66B2
 # define ELECTRIC_BLUE 0x0066FF
 # define LAVA_RED 0xFF3300
-
 typedef struct s_complex
 {
 	double	x;
@@ -71,6 +81,7 @@ typedef struct s_fractal
 	double	zoom;
 	double	julia_x;
 	double	julia_y;
+	int		current_colour;
 }			t_fractal;
 
 # define K_ESC 53
