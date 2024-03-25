@@ -6,7 +6,7 @@
 /*   By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 15:54:12 by amarzouk          #+#    #+#             */
-/*   Updated: 2024/03/25 10:35:44 by amarzouk         ###   ########.fr       */
+/*   Updated: 2024/03/25 10:44:55 by amarzouk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,7 @@ t_complex	sum_complex(t_complex z1, t_complex z2);
 t_complex	square_complex(t_complex z);
 void		data_init(t_fractal *fractal);
 int			get_psychedelic_color(int iteration, int max_iterations);
+void		handle_pixel(int x, int y, t_fractal *fractal);
+void		my_pixel_put(int x, int y, t_img *img, int color);
 
 #endif

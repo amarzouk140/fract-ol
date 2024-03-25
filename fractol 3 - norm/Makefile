@@ -6,13 +6,13 @@
 #    By: amarzouk <amarzouk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/22 14:36:55 by amarzouk          #+#    #+#              #
-#    Updated: 2024/01/22 14:41:52 by amarzouk         ###   ########.fr        #
+#    Updated: 2024/03/25 10:47:59 by amarzouk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fractol
 SRC_DIR = src
-SRC = $(addprefix $(SRC_DIR)/, main.c events.c init.c math.c ft_printf.c render.c helper.c printf_helper.c)
+SRC = $(addprefix $(SRC_DIR)/, main.c events.c init.c math.c ft_printf.c render.c helper.c printf_helper.c render2.c)
 OBJ = $(SRC:.c=.o)
 CFLAGS = -Wall -Wextra -Werror
 LDFLAGS = -L minilibx -lmlx -framework OpenGL -framework AppKit
